@@ -52,6 +52,7 @@ while (count <= gridWidth * gridWidth) {
 const blocks = document.querySelectorAll('.square');
 const colors = document.querySelectorAll('.palette .palette-color');
 const brush = document.querySelector('.brush-icon');
+const body = document.querySelector('body');
 
 
 
@@ -74,23 +75,13 @@ colors.forEach(function(color){
     const classArr = color.className.split(' ')
     colorPicked = classArr[classArr.length-1]
     console.log(colorPicked)
-    // if(color.className == 'palette-color color-1'){
-    //   colorPicked = 'color-1'
-    // }
-    // else if(color.className == 'palette-color color-2'){
-    //   colorPicked = 'color-2'
-    // }
-    // else if(color.className == 'palette-color color-3'){
-    //   colorPicked = 'color-3'
-    // }
-    // else if(color.className == 'palette-color color-4'){
-    //   colorPicked = 'color-4'
-    // }
-    // else if(color.className == 'palette-color color-5'){
-    //   colorPicked = 'color-5'
-    // }
     brush.className = `icon palette-icon ${colorPicked}`
   })
+})
+
+body.addEventListener('mouseup', function(){
+  clicked = false
+  console.log(clicked)
 })
 
 blocks.forEach(function(square){
@@ -102,8 +93,9 @@ blocks.forEach(function(square){
       clicked = false
       console.log(clicked)
     })
+    // clicked = false
     square.addEventListener('mouseover', function(){
-      if(clicked == true){
+      if(clicked === true){
         square.className = `square ${colorPicked}`
       }
     })
