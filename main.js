@@ -87,6 +87,7 @@ body.addEventListener('mouseup', function(){
 blocks.forEach(function(square){
     square.addEventListener('mousedown', function(){
       clicked = true
+      square.className = `square ${colorPicked}`
       console.log(clicked)
     })
     square.addEventListener('mouseup', function(){
