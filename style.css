@@ -1,9 +1,10 @@
 body{
   margin: 0 auto;
+  display: block;
 }
 .app {
   /* display: flex; */
-  height: 500px;
+  height: 650px;
 }
 
 .headings {
@@ -13,11 +14,13 @@ body{
 
 .brush-selection {
   height: 70px;
+  padding: 0;
+  margin: 0;
   /* display: flex; */
 }
 
 .paint {
-  height: 250px;
+  height: 50px;
   /* display: flex;
   justify-content: center; */
 }
@@ -52,7 +55,7 @@ body{
   grid-template-columns: repeat(75, 1fr);
   height: 500px;
   width: 500px;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 .canvas:hover{
   cursor: crosshair;
@@ -73,7 +76,6 @@ body{
 
 .color-3 {
   background-color: rgb(0, 119, 20);
-
 }
 
 .color-4 {
@@ -87,7 +89,7 @@ body{
 }
 
 .color-6 {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(31, 31, 31);
 
 }
 
@@ -103,4 +105,65 @@ body{
 .color-9 {
   background-color: rgb(255, 255, 255);
 
+}
+
+.canvas-n-mode{
+  display: block;
+}
+
+.square .dark-canvas{
+  background-color: rgb(10, 10, 10);
+}
+
+.darkmode .color-1{
+  background-color: rgb(87, 136, 226);
+}
+.darkmode .color-2{
+  background-color: rgb(185, 72, 72);
+}
+.darkmode .color-3{
+  background-color: rgb(6, 160, 6);
+}
+.darkmode .color-4{
+  background-color: rgb(118, 53, 124);
+}
+.darkmode .color-5{
+  background-color: limegreen;
+}
+.darkmode .color-6{
+  background-color: rgb(255, 255, 255);
+}
+.darkmode .color-7{
+  background-color: rgb(23, 7, 172);
+}
+.darkmode .color-8{
+  background-color: rgb(159, 170, 6);
+}
+.darkmode .color-9{
+  background-color: rgb(17, 17, 17);
+}
+
+.dark-mode{
+  font-size: 20px;
+  background-color: rgb(27, 27, 49);
+  color: white;
+  margin: 10px;
+}
+.clear{
+  font-size: 20px;
+  margin: 10px;
+}
+.dmButton{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+}
+.dmButton button{
+  border-radius: 5px;
+  border: 1px solid rgb(13, 14, 27);
+}
+
+.dmButton button:hover{
+  cursor: pointer;
 }
