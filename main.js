@@ -60,6 +60,7 @@ const darkText = document.querySelector('button.dark-mode');
 const app = document.querySelector('.app');
 const clear = document.querySelector('.clear');
 const squares = document.querySelectorAll('.square');
+const pepe = document.querySelectorAll('.pepe');
 
 // Dark mode on and off
 
@@ -110,21 +111,25 @@ colors.forEach(function(color){
   })
 })
 
-body.addEventListener('mouseup', function(){
+addEventListener('mouseup', function(){
   clicked = false
   console.log(clicked)
 })
 
+addEventListener('mousedown', function(){
+  clicked = true
+  console.log(clicked)
+
+})
+
 blocks.forEach(function(square){
-    square.addEventListener('mousedown', function(){
-      clicked = true
+  square.addEventListener( 'mousedown' , function(){
+    if (clicked == true){
       square.className = `square ${colorPicked}`
-      console.log(clicked)
-    })
-    square.addEventListener('mouseup', function(){
-      clicked = false
-      console.log(clicked)
-    })
+    }
+  }
+  )
+    
     // clicked = false
     square.addEventListener('mouseover', function(){
       if(clicked === true){
@@ -132,6 +137,18 @@ blocks.forEach(function(square){
       }
     })
 })
+
+// brush.addEventListener('click', function(event){
+//   if(event.detail === 5){
+//     console.log('5x')
+//     if(colorPicked == 'color-3'){
+//       console.log('green 5x')
+//       pepe.className ='pepe'
+//       pepeEE = true
+//     }
+
+//   }
+// })
 
 clear.addEventListener('click', function(){
     squares.forEach(function(square){
